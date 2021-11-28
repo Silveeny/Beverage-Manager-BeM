@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WADe BeM</title>
+    <!--    <link rel="stylesheet" href="raport.css">-->
+    <!--    <link rel="stylesheet" href="node_modules/prismjs/themes/prism-coy.css">-->
+    <script src="node_modules/prismjs/prism.js" defer></script>
+    <style>
+        @import url('./node_modules/normalize.css/normalize.css');
+        @import url('./fonts/libre-baskerville-regular.css');
+        @import url('./fonts/libre-baskerville-bold.css');
+        @import url('./fonts/libre-baskerville-italic.css');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgba(143, 123, 141, 0.20);
+            color: #434343;
+        }
+
+        header {
+            border-top: 8px solid rgba(69, 34, 65, 1);
+            border-bottom: 2px solid rgba(143, 123, 141, 1);
+            box-shadow: 2px 0 4px rgba(143, 123, 141, 1);
+            margin-bottom: 64px;
+            background: #fff;
+        }
+
+        header p.title,
+        header p.subtitle {
+            max-width: 900px;
+            padding: 0 10px;
+            font-variant: small-caps;
+            margin: 0 auto;
+        }
+
+        header p.title {
+            font-size: 32px;
+            margin-top: 16px;
+        }
+
+        header p.subtitle {
+            margin-bottom: 8px;
+        }
+
+        body>section,
+        article {
+            padding: 0 10px;
+            margin: 0 auto 120px auto;
+            max-width: 900px;
+        }
+
+        section:target h2,
+        section:target h3,
+        article:target h1 {
+            color: #2196f3;
+        }
+
+        article {
+            /* the padding is 116px 116px 80px 116px, from which we remove the border */
+            padding: 88px 88px 72px 108px;
+            background: #fff;
+            border-top: 28px solid transparent;
+            border-right: 28px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 4px solid transparent;
+            border-image: url('card-bg.png') 28 28 8 4 repeat;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 24px;
+            -moz-hyphens: auto;
+            hyphens: auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-variant: small-caps;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        h1 {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            letter-spacing: .75px;
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        h2 {
+            padding-top: 16px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            letter-spacing: .75px;
+            font-size: 20px;
+        }
+
+        h3 {
+            padding-top: 16px;
+            padding-bottom: 0;
+            letter-spacing: .5px;
+            font-size: 16px;
+        }
+
+        dfn {
+            text-decoration: underline;
+        }
+
+        a {
+            color: #2196f3;
+        }
+
+        a,
+        :link,
+        :visited {
+            text-decoration: none;
+            color: #2196f3;
+        }
+
+        a:active {
+            color: #64b5f6;
+        }
+
+        article img {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+        pre,
+        code,
+        a[property="schema:citation"] {
+            -moz-hyphens: none;
+            hyphens: none;
+        }
+
+        code:not([class]) {
+            color: #2196f3;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.3em;
+            padding: 0.2em;
+            background: #FDFDFD;
+        }
+
+        article pre[class*="language-"] {
+            max-height: 100%;
+        }
+
+        footer {
+            font-size: 10px;
+            box-shadow: -1px 0px 2px #BCBCBC;
+            background: #BDD5E9;
+            /*border-top: 2px solid #F9EABD;*/
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            max-width: 900px;
+            padding: 14px 10px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        footer a:link,
+        footer a:visited {
+            color: white;
+        }
+
+        footer img {
+            vertical-align: -4px;
+            background: white;
+            border-radius: 3px;
+            padding: 1px;
+            box-sizing: content-box;
+        }
+
+        section {
+            margin-top: 90px;
+        }
+
+        section[typeof='sa:ReferenceList'] dt {
+            float: left;
+            margin-right: 5px;
+        }
+
+        section[typeof='sa:ReferenceList'] dt::after {
+            content: ',';
+        }
+
+        section[typeof='sa:ReferenceList'] dd {
+            margin-bottom: 16px;
+        }
+
+        section[typeof='sa:ReferenceList'] cite::before {
+            content: '«';
+        }
+
+        section[typeof='sa:ReferenceList'] cite::after {
+            content: '»';
+        }
+
+        figure[typeof~="schema:Table"] {
+            overflow-x: scroll;
+        }
+
+        table {
+            width: 100%;
+            font: sans-serif;
+            letter-spacing: .25px;
+            border-collapse: collapse;
+            box-sizing: border-box;
+            background: #fff;
+        }
+
+        table th {
+            padding: 8px 16px 8px 16px;
+            white-space: nowrap;
+            border-bottom: 0px;
+            border-top: 0px;
+            letter-spacing: .5px;
+            line-height: 15px;
+            text-align: left;
+        }
+
+        table td {
+            padding: 12px;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            line-height: 18px;
+            vertical-align: top;
+            font-weight: 300;
+        }
+
+        table tbody tr:hover {
+            background-color: #F5F5F5;
+        }
+
+        caption {
+            font-family: "Libre Baskerville", Times, serif;
+            text-align: left;
+            padding: 16px;
+            margin-top: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            caption-side: bottom;
+            font-style: italic;
+            /* we're removing the border (28+4=32) + horizontal padding (88+108=196px) = 228px */
+            max-width: calc(100vw - 228px)
+        }
+
+        figure {
+            text-align: center;
+            box-sizing: border-box;
+            margin: 24px 0px;
+            padding-top: 32px;
+        }
+
+        figcaption {
+            text-align: left;
+            font: normal normal 300 13px/18px;
+            color: #9E9E9E;
+            margin: 24px 0px 32px 0px;
+            padding: 0 0px 24px 0;
+            letter-spacing: .35px;
+            border-bottom: 1px solid #eee;
+            font-style: italic;
+            hyphens: auto;
+        }
+
+        figure[typeof="sa:Image"] {
+            border-top: 1px solid #eee;
+        }
+
+        /*
+  The first section is always the users
+*/
+        article>section:first-of-type {
+            margin-top: 30px;
+        }
+
+        /* the authors' list */
+        article>section:first-of-type ol::before {
+            display: block;
+            float: left;
+            width: 150px;
+            margin-left: -150px;
+            font-variant: small-caps;
+            color: #9E9E9E;
+        }
+
+        article>section:first-of-type ol:first-of-type::before {
+            content: 'Authors';
+        }
+
+        article>section:first-of-type ol:not(:first-of-type)::before {
+            content: 'Affiliations';
+        }
+
+        article>section:first-of-type ol {
+            list-style-type: none;
+            margin-left: 150px;
+            counter-reset: affiliations;
+        }
+
+        article>section:first-of-type ol:not(:first-of-type) li::before {
+            counter-increment: affiliations;
+            content: counter(affiliations, lower-latin) '.';
+            font-size: 12px;
+            display: inline;
+        }
+
+        article>section:first-of-type li {
+            display: inline;
+        }
+
+        article>section:first-of-type li::after {
+            content: ',';
+        }
+
+        article>section:first-of-type li:last-child::after {
+            content: normal;
+        }
+
+        article>section:first-of-type a[property="sa:roleAffiliation"] {
+            font-size: 12px;
+            vertical-align: super;
+        }
+
+        /* have less vertical space in structured abstracts */
+        section[typeof='sa:Abstract']>section {
+            margin: 0;
+        }
+
+        section[typeof='sa:Abstract']>section>h3 {
+            display: inline;
+            font-variant: small-caps;
+            float: left;
+            font-size: inherit;
+            line-height: inherit;
+            margin: 0;
+            padding: 16px 8px 0 0;
+            color: #9E9E9E
+        }
+
+        aside[typeof="schema:WPSideBar"] {
+            font-style: italic;
+            background: #F0F6FA;
+        }
+
+        /* this is for a bug in PrismJS 1.3.0 that renders code as pre */
+        :not(pre)>code[class*='language-'] {
+            white-space: normal;
+        }
+
+        /* wide screen */
+        @media screen and (min-width: 1900px) {
+            article {
+                max-width: 1200px;
+                font-size: 16px;
+                line-height: 30px;
+            }
+
+            header p.title,
+            header p.subtitle,
+            footer p {
+                max-width: 1200px;
+            }
+
+            footer {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 979px) {
+            article {
+                width: 100%;
+                padding: 115px 116px 79px 116px;
+                border-top: 1px solid #E0E0E0;
+                border-bottom: 1px solid #E0E0E0;
+                border-left: none;
+                border-right: none;
+            }
+
+            caption {
+                /* we're removing the horizontal padding (116px*2 = 232px) */
+                max-width: calc(100vw - 232px)
+            }
+        }
+
+        @media screen and (max-width: 799px) {
+            article {
+                padding: 57px 58px 39px 58px;
+            }
+
+            caption {
+                /* we're removing the horizontal padding (58px*2 = 116px) */
+                max-width: calc(100vw - 116px)
+            }
+        }
+
+        @media screen and (max-width: 399px) {
+            article {
+                padding: 28px 29px 19px 29px;
+            }
+
+            caption {
+                /* we're removing the horizontal padding (29px*2 = 58px) */
+                max-width: calc(100vw - 58px)
+            }
+
+            footer {
+                font-size: 10px;
+            }
+
+            article>section:first-of-type ol::before {
+                float: none;
+                width: auto;
+                margin-left: 0;
+            }
+
+            article>section:first-of-type ol {
+                margin-left: 0;
+                padding: 0;
+            }
+
+            section[typeof="sa:Abstract"] {
+                margin-top: 30px;
+            }
+        }
+
+        @media print {
+            header {
+                display: none;
+            }
+
+            footer {
+                background: #fff;
+                border: none;
+                color: #434343;
+            }
+
+            body {
+                margin: 0;
+                background: #fff;
+            }
+
+            article {
+                width: 100%;
+                border: none;
+                padding: 2em;
+            }
+
+            footer a:link,
+            footer a:visited,
+            a:link,
+            a:visited {
+                color: inherit;
+            }
+
+            pre {
+                background: transparent;
+            }
+
+            figure {
+                background: transparent;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <p class="title">BeM Project</p>
+    </header>
+    <article id="echipa" typeof="schema:ScholarlyArticle" resource="#">
+        <h1>Authors</h1>
+        <section>
+            <ol>
+                <li property="schema:author" typeof="sa:ContributorRole">
+                    <a property="schema:author" href="https://github.com/hiezust" typeof="schema:Person">
+                        <span property="schema:familyName">NICULITA</span>
+                        <span property="schema:givenName"> SILVAN</span>
+                    </a>
+                </li>
+                <li property="schema:author" typeof="sa:ContributorRole">
+                    <a property="schema:author" href="https://github.com/hiezust" typeof="schema:Person">
+                        <span property="schema:familyName">MUNTEANU</span>
+                        <span property="schema:givenName">RALUCA</span>
+                    </a>
+                </li>
+                <li property="schema:author" typeof="sa:ContributorRole">
+                    <a property="schema:author" href="https://github.com/hiezust" typeof="schema:Person">
+                        <span property="schema:familyName">CRETU</span>
+                        <span property="schema:givenName">BOGDAN</span>
+                    </a>
+                </li>
+            </ol>
+            <ol>
+                <li id="fii">
+                    <a href="https://www.info.uaic.ro/bin/Main/" typeof="schema:Corporation">
+                        <span property="schema:name">Facultatea de Informatică Iaşi</span>
+                    </a>
+                </li>
+            </ol>
+        </section>
+
+        <section id="intro">
+            <h1>Technical Report</h1>
+            <p>
+            
+				This article discusses and analyzes the initial steps in the implementation of the BEM 
+				– a beverage manager – which is a web-based application that will allow people to search for
+				non-alcoholic beverages and mocktails they can prepare and serve at events and possible restrictions 
+				that are associated with the said beverages. The program itself will also allow users to log their data
+				and preferences in so that they can view prices/availability/comment/reviews/recipes.
+				
+			</p>
+        </section>
+        <section id="scop">
+            <h1>Implementation:</h1>
+            <p>
+                Initial idea on the development of this program is to use C# for the development:
+                <ul>
+                    <li>ASP.NET API - It will handle the authentication service</li>
+                    <li>Using the http://dotnetrdf.org/ library for managing our RDF.</li>
+                    <li>OpenLink Virtuoso - We can execute through an ADO.NET connection from C#,
+					through the Virtuoso ADO.NET Provider, by turning it into SPARQL-in-SQL (SPASQL)</li>
+                </ul>
+            </p>
+        </section>
+        <section id="scop">
+            <h1>Alternative plan</h1>
+            <p>Another option since some of us are JAVA developers is to use Spring:</p>
+            <ol>
+                <li>A main service using OpenLink Virtuoso – though not necessary since </li>
+                <li>Spring Boot - authentication service</li>
+                <li>Spring Boot with Apache Jena adaptor for SPARQL for inference engine.</li>
+            </ol>
+            <p>As such these elements will be our main connection between front-end and back-end.
+			The program will be hosted on AWS using a virtual machine along with the services and node.js application.</p>
+		</section>
+        <section id="scop">
+            <h1>Initial Analysis:</h1>
+            <p>The web-apps purpose is to actually help people make an educated decision 
+			to drinks they can buy or make and serve. As such we devised a list of things
+			we want to include as a checklist. In the final website design, we would like
+			to have the elements outlined in the image below in the form of dropdowns so
+			that users can help limit their searches to a certain degree:</p>
+            <ul>
+                <li>Location – Countries have access to different fruit/beverages so this is important.</li>
+                <li>Ingredients – Serves as a link for refining whether someone wants a tea/ a soft drink/ a juice etc…</li>
+                <li>Restrictions – This dropdown excludes certain drinks from the search ( ex. Sugary drinks)</li>
+                <li>Date – This uses a calendar to select and offers drink based on seasons and/or holidays.</li>
+            </ul>
+            <p> Though the list can be expanded – it is a good starting point for the ontology design. So we decided to create a small
+			number of ontology designs using WebVOWL Editor, afterwards switching over to
+			https://protege.stanford.edu/products.php - which is a bit better.
+			Virtuoso handles SPARQL queries well enough and we can load ontologies into it,
+			but we are looking at an open-source alternative at the moment.
+			Information regarding suggested mocktails will use imbedded images to share recipes and these along
+			with user information will be stored in a persistent SQL database, while drink information queries
+			will be directed to Virtuoso. </p>
+                
+                <figure typeof="sa:Image">
+                    <img src="https://i.imgur.com/3vOYQxf.png" width="880" height="655">WebVOWL
+                </figure>
+				
+                <figure typeof="sa:Image">
+                    <img src="https://i.imgur.com/Y4P6bKQ.png" width="655" height="880">Protege
+                </figure>
+        </section>
+        <section id="scop">
+            <h1>Preliminary considerations about the project - Midterm evaluation</h1>
+            <h2>Preliminary considerations about the internal data structures/models to be used</h2>
+            <p>
+                <h2><b>Scenario 1: User saves his preferences - registered – high sugar, milk</b></h2> <br>
+                The api will send a json to the api service with the following structure: <br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“user_token”: "sd78g6s87a6fa876asf67a6f8a7dg6s876", <br>
+                    &nbsp;&nbsp;&nbsp;“sugarContent”: '["sugary"]', <br>
+                    &nbsp;&nbsp;&nbsp;“names”: '["milk"]', <br>
+					&nbsp;&nbsp;&nbsp;“saveQuery”: “true” <br>
+
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>user_token: </b>The user token used for identification</li>
+					<li><b>sugarContent: </b>Array containing accepted values for the 'sugarContent' field</li>
+					<li><b>names: </b>Array of keywords used for filtering results</li>
+					<li><b>saveQuery: </b>Boolean value, if true search query will be loaded when user logs in</li>
+                    
+                </ul>
+                The api service will send a response with the following form:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“SearchPresetSaved”: true <br>
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>SearchPresetSaved:</b> Confirmation that the search query is saved</li>
+                </ul>
+                <h2><b>Scenario 2 User searches for A lime drink without being logged in</b></h2> <br>
+                The api will send a json to the api service with the following structure: <br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“user_token”: "", <br>
+                    &nbsp;&nbsp;&nbsp;“names”: '["Lime"]' <br>
+
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>user_token: </b>The user token used for identification</li>
+					<li><b>names: </b>Array of keywords used for filtering results</li>
+                    
+                </ul>
+                The api service will send a response with the following form:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“foundDrinks”: true, <br>
+					&nbsp;&nbsp;&nbsp;“listOfDrinks”: '["Lemonade","LemonMocktail"," . . . "]' <br>
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>foundDrinks:</b> Boolean with true if one or more drinks were found, false otherwise</li>
+					<li><b>listOfDrinks:</b> Array containing the individual drinks respecting the requirments</li>
+                </ul>
+                <h2>Scenario 3: User registers on website</h2>
+                The api will send a json to the api service with the following structure: <br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“username”: "Name", <br>
+                    &nbsp;&nbsp;&nbsp;“email”: "user@something.com", <br>
+					&nbsp;&nbsp;&nbsp;“password”: "v3r35nf8h78sfv64jniy346hvbg", <br>
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>username: </b>The name the user will be saved as</li>
+					<li><b>email: </b>The email of the user</li>
+					<li><b>password: </b>The password to be used for the user</li>
+					
+                    
+                </ul>
+                The api service will send a response with the following form:<br>
+                <b> { <br>
+                    &nbsp;&nbsp;&nbsp;“userToken”: "wb245b9n87mbodfv8y24bg46o8dubg", <br>
+                    }<br>
+                </b>
+                <ul>
+                    <li><b>userToken:</b> The token the user will use for saving preferences</li>
+                </ul>
+            </p>
+			<p>END OF CONTENT</p>
+        </section>
+        <section typeof="sa:Abstract" id="scop">
+            <h1>Considerations about the external data sources</h1>
+           
+            <h2>Description of the diagram elements</h2>
+            <p>
+                <b></b><br>
+                <figure typeof="sa:Image">
+                    <img src="https://i.imgur.com/4Hhjsbe.png" width="655" height="880"><br>Example of Entity relationships
+                </figure><br>
+				<b></b><br>
+                <figure typeof="sa:Image">
+                    <img src="https://i.imgur.com/H5HlF64.png" width="880" height="655">Application architecture
+                </figure><br>
+				<b></b><br>
+                <figure typeof="sa:Image">
+                    <img src="https://i.imgur.com/mpMP2PA.png" width="880" height="655">The UI plan
+                </figure><br>
+                <b>Registration and authentication service</b><br>
+                Initially, the user will be asked for email, user name and a password to be kept inside the database. Based on the email and password he will be authenticated later. When an user is successfully authenticated a token is generated, this token is used by the rest of the services.<br><br>
+                <b>API</b><br>
+				The api will be responsible for getting the filters selected by the user to virtuoso and returning the data.
+			</p>
+
+        </section>
+    </article>
+    <footer>
+        <p>
+            <a href="?">WADe 2019</a>
+        </p>
+    </footer>
+</body>
+
+</html>
