@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#"
+     xml:base="http://www.semanticweb.org/bc/ontologies/2021/10/BEM"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM">
+        <rdfs:comment xml:lang="en">Bem ontology</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#AvailableAsSugarFree_Beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#AvailableAsSugarFree_Beverage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Black_Tea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Black_Tea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Tea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Bottled_Tea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Bottled_Tea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Uncarbonated_Soda"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Canned_Coffee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Canned_Coffee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Coffee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Carb_Artificial_Flavored -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Carb_Artificial_Flavored">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Carbonated_Soda"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Evening_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Morning_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Noon_Beverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Carb_Fruit_Flavored -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Carb_Fruit_Flavored">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Carbonated_Soda"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Evening_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Morning_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Noon_Beverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Carbonated_Soda -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Carbonated_Soda"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Carbonated_Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Carbonated_Water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Water"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Coffee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Coffee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Morning_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Noon_Beverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Decaffeinated_Coffee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Decaffeinated_Coffee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Coffee"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Evening_Beverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Energy_Drink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Energy_Drink">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Carbonated_Soda"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Morning_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Noon_Beverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Evening_Beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Evening_Beverage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Fresh_Coffee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Fresh_Coffee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Coffee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Fruit_Juice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Fruit_Juice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Uncarbonated_Soda"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Fruit_Tea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Fruit_Tea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Evening_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Tea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Green_Tea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Green_Tea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Evening_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Tea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#HighSugar_Beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#HighSugar_Beverage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#LowSugar_Beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#LowSugar_Beverage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Low_Fat_Milk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Low_Fat_Milk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Milk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Milk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Milk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Evening_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Morning_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Noon_Beverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Morning_Beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Morning_Beverage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Noon_Beverage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Noon_Beverage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Normal_Fat_Milk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Normal_Fat_Milk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Milk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Still_Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Still_Water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Water"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Tea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Tea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Morning_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Noon_Beverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Uncarbonated_Soda -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Uncarbonated_Soda">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Evening_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Morning_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Noon_Beverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Evening_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Morning_Beverage"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/bc/ontologies/2021/10/BEM#Noon_Beverage"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
