@@ -1,0 +1,79 @@
+.input-group{
+
+}
+
+#first-form{
+}
+
+.body{
+	align-items: center;
+	align-content: center;
+	text-align:center;
+	background-color:#F6EFEE;
+}
+
+
+.form-control{
+	height: 5vh;
+	width: 15vw;
+	font-size: large;
+	color:#AE84AE;
+	box-sizing: border-box;
+	appearance: none;
+	border: 2px solid black;
+	border-radius: 0.6em;
+	background-color:#2A3D45;
+	
+}
+
+.form-select{
+	height: 20vh;
+	width: 15vw;
+	margin: 1vh 1vw;
+	color: #AE84AE;
+	box-sizing: border-box;
+	appearance: none;
+	border: 2px solid black;
+	border-radius: 0.6em;
+	background-color:#2A3D45;
+	
+}
+
+
+
+.btn{
+	box-sizing: border-box;
+	border: 2px solid black;
+	border-radius: 0.6em;
+	color: #AE84AE;
+	background-color:#2A3D45;
+	cursor: pointer;
+	align-self: center;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1;
+	margin: 1vh 1vw;
+	padding: 1.2em 1.2em;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	width: 15vw;
+
+}
+
+
+.btn:hover {
+    color: #ff00bf;
+}
+
+.drink-btn{
+	margin: 5vh 3vw;
+	
+}
+
+.text-line{
+	font-size:200%;
+	font-weight:1000;
+	color: #2A3D45;
+}

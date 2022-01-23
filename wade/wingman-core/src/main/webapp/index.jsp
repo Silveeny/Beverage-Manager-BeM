@@ -1,19 +1,22 @@
 <%@ page import="java.util.List" %>
 <html>
     <head>
+		<!--
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    </head>
-    <body>
+		-->
+		<link rel="stylesheet" href="style.css">
+		
+	</head>
+    <body class="body">
         <h1> Hola amigo</h1>
 
 
-        <form action="">
+        <form action="" id="first-form">
 
 
             <div class="input-group">
                 <div class="form-outline">
-                    <input type="search" id="form1" class="form-control" />
-                    <label class="form-label" for="form1">Search</label>
+                    <input type="search" id="form1" class="form-control" placeholder="Search for something"/>
                 </div>
 
                 <button type="button" class="btn btn-primary">
@@ -62,29 +65,33 @@
 
 
         </form>
-
-        <button type="button" class="btn btn-primary" aria-label="Left Align" id="all-carbonated-drinks">
+		
+		<div class="text-line">
+             <p>Other Links:</p>
+        </div>
+		
+        <button type="button" class="btn btn-primary drink-btn" aria-label="Left Align" id="all-carbonated-drinks">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-cup" viewBox="0 0 36 36">
                 <path d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8zM13 2H2v10.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V2z"/>
             </svg>
             Carbonated Drinks
         </button>
 
-        <button type="button" class="btn btn-primary" aria-label="Left Align" id="all-mocktails">
+        <button type="button" class="btn btn-primary drink-btn" aria-label="Left Align" id="all-mocktails">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-cup" viewBox="0 0 36 36">
                 <path d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8zM13 2H2v10.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V2z"/>
             </svg>
             Mocktails
         </button>
 
-        <button type="button" class="btn btn-primary" aria-label="Left Align" id="all-coffee">
+        <button type="button" class="btn btn-primary drink-btn" aria-label="Left Align" id="all-coffee">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-cup" viewBox="0 0 36 36">
                 <path d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8zM13 2H2v10.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V2z"/>
             </svg>
             Coffee
         </button>
 
-        <button type="button" class="btn btn-primary" aria-label="Left Align" id="all-tea">
+        <button type="button" class="btn btn-primary drink-btn" aria-label="Left Align" id="all-tea">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-cup" viewBox="0 0 36 36">
                 <path d="M1 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1h.5A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-.55a2.5 2.5 0 0 1-2.45 2h-8A2.5 2.5 0 0 1 1 12.5V2zm13 10h.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H14v8zM13 2H2v10.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V2z"/>
             </svg>
