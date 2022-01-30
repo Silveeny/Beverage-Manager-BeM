@@ -1,18 +1,23 @@
 :root {
-  --BGColor: #48d6d2;
-	--Color1: #122c91;
-	--Color2: #122c91;
-	--Color3: #fefcbf;
-	--Color4: #81e9e6;
+  --BGColor: #ffffff;
+	--Color1: #3388CB;
+	--ColorText:#3388CB;
+	--Color2: #F2F2F2;
+	--Color3: #000000;
+	--Color4: #F2F2F2;
+	--HoverColor:#D0E5F2;
   --white: #ffffff;
+	--black: #000000;
+
+	/* var(--ColorText); */
 }
 
 
 .header {
+
   overflow: hidden;
   background-color: var(--Color1);
-	background: linear-gradient(270deg, rgba(18,44,145,1) 0%, rgba(0,107,129,1) 94%, rgba(18,44,145,1) 100%);
-  padding: 1vh;
+	padding: 1vh;
 }
 
 .header a {
@@ -69,10 +74,11 @@
 	align-content: center;
 	text-align:center;
 	background-color:var(--BGColor);
-	background: linear-gradient(270deg, rgba(18,44,145,1) 0%, rgba(0,212,255,1) 94%, rgba(18,44,145,1) 100%);
 	padding: 0;
 	margin: 0;
+
 }
+
 
 
 .form-control{
@@ -119,7 +125,6 @@
 	text-decoration: none;
 	text-align: left;
 	text-transform: uppercase;
-	font-family: 'Montserrat', sans-serif;
 	width: 15vw;
 	height: 10vh;
 	transition: border-radius .5s, background 1s, transform .5s;
@@ -129,7 +134,7 @@
 
 .btn:hover{
 	cursor: pointer;
-  background:var(--Color4);
+  background:var(--HoverColor);
   transform: scale(1.2);
   border-radius: 25px;
 }
@@ -138,7 +143,7 @@
 .text-line{
 	font-size:150%;
 	font-weight:1000;
-	color: var(--Color2);
+	color: var(--ColorText);
 }
 
 .search-btn{
