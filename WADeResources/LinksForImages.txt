@@ -13,6 +13,17 @@ Services Structure
 https://imgur.com/a/avQ6pay
 IndividualExample
 
+https://i.imgur.com/yaOQUBz.png
+DockerConnsole
+
+https://i.imgur.com/Iu60Vl8.png
+JenaDatasetCreation
+
+https://i.imgur.com/LSAEPpj.png
+JenaUploadData
+
+https://i.imgur.com/595xAWA.png
+AppMock
 
 
 
